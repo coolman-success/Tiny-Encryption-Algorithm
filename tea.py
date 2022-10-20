@@ -1,13 +1,6 @@
 import struct
 
 
-def xor(a, b):
-    op = 0xFFFFFFFF
-    a1, a2 = struct.unpack(b">LL", a[0:8])
-    b1, b2 = struct.unpack(b">LL", b[0:8])
-    return struct.pack(b">LL", (a1 ^ b1) & op, (a2 ^ b2) & op)
-
-
 def tea_code(v, k) -> bytes:
     n = 32
     op = 0xFFFFFFFF
